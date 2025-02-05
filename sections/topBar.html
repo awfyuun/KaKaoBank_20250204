@@ -267,6 +267,14 @@
                 <button class="dropBtn">
                    <span>관련사이트</span>
                    <span class="ico"><i class="fa-solid fa-chevron-down"></i></span> 
+                   <div class="dropdown_content is-active">
+                        <ul>
+                            <li><a href=""><span>카카오뱅크 AD</span></a></li>
+                            <li><a href=""><span>카카오뱅크 인증서</span></a></li>
+                            <li><a href=""><span>금융기술연구소</span></a></li>
+                            <li><a href=""><span>기술블로그</span></a></li>
+                        </ul> 
+                   </div>
                 </button>
             </div>
         </div>
@@ -356,7 +364,7 @@
             position: fixed;
             top: 0;
             left: 0;
-            border-bottom: 1px solid rgba(0,0,0,0.1)
+            border-bottom: 1px solid rgba(0,0,0,0.1);
         }
         /* 로고 */
         .topBar .logo-wrap > a {
@@ -401,6 +409,7 @@
             display: none;
             padding: 6px 0 36px 0;
             box-shadow: 0 4px 12px 0 rgba(0,0,0,0.1);
+            border-top: 1px solid rgba(0,0,0,0.1);
         }
 
         /* .topBar .menu_box > ul > li:nth-child(2) > ul {
@@ -441,6 +450,10 @@
             margin-bottom: 24px;
         }
         /* 관련 사이트 */
+        .topBar .dropdown {
+            position: relative;
+        }
+
         .topBar .dropdown .dropBtn {
             background: rgba(244, 244, 244, 0.8);
             color: rgba(68, 68, 68, 1);
@@ -457,6 +470,35 @@
             display: inline-block;
             margin-left: 5px;
         }
+
+        .topBar .dropdown .dropdown_content {
+            position: absolute;
+            left: 0;
+            top: 100%;
+            background-color: #fff;
+            box-shadow: 0 4px 12px 0 rgba(0,0,0,0.1);
+            border-radius: 6px;
+            margin-top: 30px;
+            width: 240px;
+            overflow: hidden;
+            visibility: hidden;
+        }
+
+        .topBar .dropdown .dropdown_content a {
+            font-size: 13px;
+            display: block;
+            padding: 0 24px;
+            line-height: 48px;
+        }
+
+        .topBar .dropdown .dropdown_content a:hover {
+            text-decoration: underline;
+        }
+
+        .topBar .dropdown.is-active {
+            visibility: visible !important;
+        }
+
         /* 탑바 끝 */
     </style>
     <script>

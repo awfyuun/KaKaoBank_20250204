@@ -132,6 +132,7 @@
             background-image: url(../images/img_kabang_220615.png);
         }
 
+
         /* 메인 배너 시작 */
         .main_banner .bg {
             position: absolute;
@@ -205,5 +206,26 @@
         }
         /* 메인 배너 끝  */
     </style>
+        <script>
+            $('.dropBtn').click(function() {
+                var dropdownContent = $('.dropdown_content');
+                var ico = $(".fa-chevron-down");
+    
+                if ( dropdownContent.hasClass('is-active') ) {
+                    dropdownContent.removeClass('is-active');
+                    ico.removeClass("rotate");
+                } else {
+                    dropdownContent.addClass('is-active');
+                    ico.addClass("rotate");
+                }
+            })
+    
+            $(window).click(function(event) {   
+                if ( !$(event.target).closest(".dropBtn").length) {
+                    $(".dropdown_content").removeClass('is-active');
+                    $(".dropBtn").removeClass('rotate');
+                }
+            });
+        </script>
 </body>
 </html>

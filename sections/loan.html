@@ -13,6 +13,17 @@
 <body>
     <div class="con-min-width loan_box active-on-visible" data-active-on-visible-diff-y="-200" data-active-on-visible-delay="1000">
         <div class="sky">
+            <div class="sky night">
+                <div class="stars">
+                <span class="ico-star ico-star-1"></span>
+                <span class="ico-star ico-star-2"></span>
+                <span class="ico-star ico-star-3"></span>
+                <span class="ico-star ico-star-4"></span>
+                <span class="ico-star ico-star-5"></span>
+                <span class="ico-star ico-star-6"></span>
+                <span class="ico-star ico-star-7"></span>
+                </div>
+            </div>
             <div class="blue"></div>
             <div class="moon">
                 <div class="base"></div>
@@ -186,31 +197,118 @@
             left: -23%; 
         }
         /* 대출박스 끝 */
+        /* 대출박스 - 별 시작 */
+        .loan_box .sky .ico-star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background-color: #fff;
+        }
+
+        .loan_box .sky .ico-star-1 {
+            top: 30%;
+            left: 10%;
+        }
+
+        .loan_box .sky .ico-star-2 {
+            top: 10%;
+            left: 20%;
+        }
+
+        .loan_box .sky .ico-star-3 {
+            top: 25%;
+            left: 15%;
+        }
+
+        .loan_box .sky .ico-star-4 {
+            top: 40%;
+            right: 15%;
+        }
+
+        .loan_box .sky .ico-star-5 {
+            top: 43%;
+            right: 30%;
+        }
+
+        .loan_box .sky .ico-star-6 {
+            top: 73%;
+            right: 27%;
+        }
+
+        .loan_box .sky .ico-star-7 {
+            top: 65%;
+            left: 22%;
+        }
+
+        @keyframes clittering {
+            0% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+            50% {
+            opacity: 1;
+            transform: scale(0.9);
+        }
+            100% {
+            opacity: 0;
+            transform: scale(0.5);
+        }
+        }
+
+        .ico-star-1 {
+            animation: clittering 2s infinite;
+        }
+
+        .ico-star-2 {
+            animation: clittering 3s infinite;
+        }
+
+        .ico-star-3 {
+            animation: clittering 5s infinite;
+        }
+
+        .ico-star-4 {
+            animation: clittering 2s infinite;
+        }
+
+        .ico-star-5 {
+            animation: clittering 4s infinite;
+        }
+
+        .ico-star-6 {
+            animation: clittering 1.8s infinite;
+        }
+
+        .ico-star-7 {
+            animation: clittering 3.5s infinite;
+        }
+        /* 대출박스 - 별 끝 */
     </style>
     <script>
-/* 발견되면 활성화시키는 라이브러리 시작 */
-function ActiveOnVisible__init() {
-$('.active-on-visible').each(function(index, node) {
-    var $node = $(node);
+    /* 발견되면 활성화시키는 라이브러리 시작 */
+    function ActiveOnVisible__init() {
+    $('.active-on-visible').each(function(index, node) {
+        var $node = $(node);
 
-    var onFuncName = $node.attr('data-active-on-visible-on-func-name');
-    var offFuncName = $node.attr('data-active-on-visible-off-func-name');
+        var onFuncName = $node.attr('data-active-on-visible-on-func-name');
+        var offFuncName = $node.attr('data-active-on-visible-off-func-name');
 
-    $node.data('data-active-on-visible-on-func-name', onFuncName);
-    $node.data('data-active-on-visible-off-func-name', offFuncName);
-});
+        $node.data('data-active-on-visible-on-func-name', onFuncName);
+        $node.data('data-active-on-visible-off-func-name', offFuncName);
+    });
 
-$(window).resize(_.debounce(ActiveOnVisible__initOffset, 500));
-ActiveOnVisible__initOffset();
+    $(window).resize(_.debounce(ActiveOnVisible__initOffset, 500));
+    ActiveOnVisible__initOffset();
 
-$(window).scroll(_.debounce(ActiveOnVisible__checkAndActive, 50));
-ActiveOnVisible__checkAndActive();
-}
+    $(window).scroll(_.debounce(ActiveOnVisible__checkAndActive, 50));
+    ActiveOnVisible__checkAndActive();
+    }
 
-function ActiveOnVisible__initOffset() {
-var windowHeight = $(window).height();
+    function ActiveOnVisible__initOffset() {
+    var windowHeight = $(window).height();
 
-$('.active-on-visible:not(.actived)').each(function(index, node) {
+    $('.active-on-visible:not(.actived)').each(function(index, node) {
     var $node = $(node);
 
     var offsetTop = $node.offset().top;
@@ -256,11 +354,11 @@ $('.active-on-visible:not(.actived)').each(function(index, node) {
     $node.data('data-active-on-visible-delay', delay);
 });
 
-ActiveOnVisible__checkAndActive();
-}
+    ActiveOnVisible__checkAndActive();
+    }
 
-function ActiveOnVisible__checkAndActive() {
-$('.active-on-visible:not(.actived)').each(function(index, node) {
+    function ActiveOnVisible__checkAndActive() {
+    $('.active-on-visible:not(.actived)').each(function(index, node) {
     var $node = $(node);
 
     var offsetTop = $node.data('data-active-on-visible-offsetTop') * 1;
@@ -288,8 +386,8 @@ $('.active-on-visible:not(.actived)').each(function(index, node) {
         }
     }
     }, delay);
-}
-else {
+    }
+    else {
     if ( $node.hasClass('active') ) {
     $node.removeClass('active');
 
@@ -297,9 +395,9 @@ else {
         window[offFuncName]($node);
     }
     }
-}
-});
-}
+    }
+    });
+    }
 
     $(function() {
     ActiveOnVisible__init();

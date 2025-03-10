@@ -4,8 +4,9 @@ html {
 /* 영문이면 roboto가 적용되고, 한글이면 Noto Sans KR가 적용되도록 아래와 같은 순서로 배치 */
 font-family: "Roboto", "Noto Sans KR", sans-serif;
 }
+
 /* 노말라이즈 */
-body, ul, li {
+body, ul, li, h3 {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -98,7 +99,6 @@ a {
 }
 
 .ico {
-    background-color: white;
     width: 24px;
     height: 24px;
     display: inline-block;
@@ -115,7 +115,9 @@ a {
     top: 0;
     left: 0;
     border-bottom: 1px solid rgba(0,0,0,0.1);
+    z-index: 100;
 }
+
 /* 로고 */
 .topBar .logo-wrap > a {
     width: 116px;
@@ -124,6 +126,7 @@ a {
 .topBar .logo-wrap > a > img {
     width: 100%;
 }
+
 /* 텍스트 */
 .topBar .menu_box > ul > li > a {
     padding: 0 24px;
@@ -211,6 +214,7 @@ a {
     vertical-align: middle;
     margin-top: -4px;
 }
+
 /* 관련 사이트 */
 .topBar .dropdown {
     position: relative;
@@ -283,6 +287,7 @@ a {
     vertical-align: middle;
     margin-top: -4px;
 }
+
 /* 글로벌 로고 */
 .topBar .global_logo {
     display: inline-block;
@@ -297,16 +302,24 @@ a {
 .topBar .global_logo:hover > span > img {
     opacity: .3;
 }
-
 /* 탑바 끝 */
 
 /* 메인 배너 시작 */
+.main_banner {
+    margin-top: 80px;
+}
+
+.main_banner img {
+    width: 1200px;
+    margin-left: -60px;
+}
+
 .main_banner .bg {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 648px;
+    height: 720px;
     z-index: -1;
     background-color: #ffef6b;
 }
@@ -333,7 +346,7 @@ a {
 }
     
 .main_banner .text-box > .btns {
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
 .main_banner .text-box > .btns > li:first-child {
@@ -376,292 +389,293 @@ a {
 /* 중간섹션 시작 */
 /* 공통섹션 시작 */ 
 .md_sec {
-min-height: 500px;
-display: flex;
+    height: 750px;
+    display: flex;
 }
 
 .md_sec > div:first-child {
-width: 50%;
-display: flex;
-align-items: center;
+    width: 50%;
+    display: flex;
+    align-items: center;
 }
 
 .md_sec > div:last-child {
-flex-grow: 1;
-display: flex;
-align-items: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
 
 .md_divider {
-height: 32px;
-background-color: #fafafa;
+    height: 32px;
+    background-color: #fafafa;
 }
 
 .md_sec .txt_box h3 {
-font-size: 40px;
-line-height: 1.3;
-margin: 0;
+    font-size: 40px;
+    line-height: 1.3;
+    margin: 0;
 }
 
-.md_sec .txt_box .btn_box p {
-font-size: 15px;
-line-height: 1.7;
-margin-top: 24px;
-color: #666; 
+.md_sec .txt_box p {
+    font-size: 15px;
+    line-height: 1.7;
+    margin-top: 24px;
+    color: #666; 
 }
 
 .md_sec .txt_box .btn_box a {
-background-color: #f6f6f6;
-font-size: 16px;
-width: 258px;
-height: 56px;
-line-height: 56px;
-border-radius: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
+    background-color: #f6f6f6;
+    font-size: 16px;
+    width: 258px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .md_sec .txt_box .btn_box {
-margin-top: 35px;
-display: flex;
+    margin-top: 35px;
+    display: flex;
 }
 
 .md_sec .txt_box .btn_box a img {
-width: 6px;
-height: 9px;
-margin: -2px 0 0 8px;
+    width: 6px;
+    height: 9px;
+    margin: -2px 0 0 8px;
 }
 /* 공통섹션 끝 */ 
 
 /* 색션 1 시작*/
 .md_sec-1 > div:first-child > * {
-margin-left: 40px;
+    margin-left: 40px;
 }
 
 .md_sec-1 > div:last-child > * {
-margin-left: 90px;
+    margin-left: 90px;
 }
 
 .md_sec-1 .img-box {
-width: 473px;
+    width: 473px;
 }
 /* 색션 1 끝*/
 
 /* 색션 2 시작*/
 .md_sec-2 > div:first-child > * {
-margin-left: 70px;
+    margin-left: 70px;
 }
 
 .md_sec-2 > div:last-child > * {
-margin-left: 120px;
+    margin-left: 120px;
 }
 
 .md_sec-2 .img-box {
-width: 409px;
+    width: 409px;
 }
 
 .md_sec-2 .img-box > img {
-transform: translateX(20%);
-opacity: 0;
-transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s
+    transform: translateX(20%);
+    opacity: 0;
+    transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s
 }
 
 .md_sec-2 .img-box.active > img {
-transform: translateX(0);
-opacity: 1;
+    transform: translateX(0);
+    opacity: 1;
 }
 
 .md_sec-2 .txt_box > .btn_box > a {
-width: 158px;
+    width: 158px;
 }
 
 .md_sec-2 .txt_box > .btn_box > a:first-child {
-margin-right: 6px;
+    margin-right: 6px;
 }
 
 .md_sec-2 .txt_box > .img_box_1 {
-width: 440px;
-margin-top: 50px;
+    width: 440px;
+    margin-top: 50px;
 }
 
 .md_sec-2 .txt_box > .img_box_1 > img {
-display: block;
-width: 100%;
+    display: block;
+    width: 100%;
 }
 /* 색션 2 끝*/
 
 /* 색션 3 시작*/
 .md_sec-3 > div:first-child > * {
-margin-left: 57px;
+    margin-left: 57px;
 }
 
 .md_sec-3 > div:last-child > * {
-margin-left: 90px;
+    margin-left: 90px;
 }
 
 .md_sec-3 .img-box {
-width: 459px;
+    width: 459px;
 }
 /* 색션 3 끝*/
 
 /* 색션 4 시작*/
+.md_sec-4 {
+    height: 650px;
+}
+
 .md_sec-4 > div:first-child > * {
-margin-left: 130px;
+    margin-left: 130px;
 }
 
 .md_sec-4 > div:last-child > * {
-margin-left: 40px;
+    margin-left: 40px;
 }
 
 .md_sec-4 .img-box {
-width: 492px;
+    width: 492px;
 }
 /* 색션 4 끝*/
 
 /* 색션 5 시작*/
 .md_sec-5 > div:first-child > * {
-margin-left: 75px;
+    margin-left: 75px;
 }
 
 .md_sec-5 > div:last-child > * {
-margin-left: 90px;
+    margin-left: 90px;
 }
 
 .md_sec_5_wrap {
-height: 750px;
-background: #fff url(/images/home_map.png) no-repeat -12% 50%;
+    height: 750px;
+    background: #fff url(/images/home_map.png) no-repeat -12% 50%;
 }
 .md_sec-5 .img-box {
-width: 408px;
+    width: 408px;
 }
 
 .md_sec-5 .img-box > img {
-transform: translateY(20%);
-opacity: 0;
-transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s
+    transform: translateY(20%);
+    opacity: 0;
+    transition: transform 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s, opacity 1.4s cubic-bezier(0.6, 0.2, 0.1, 1) 0.5s
 }
 
 .md_sec-5 .img-box.active > img {
-transform: translateY(0);
-opacity: 1;
+    transform: translateY(0);
+    opacity: 1;
 }
 /* 색션 5 끝*/
 /* 중간섹션 끝 */
 
 /* 대출박스 시작 */
 .loan_box {
-background-color: #333b58;
-position: relative;
-color: #fff;
-
-/* 임시 */
-z-index: 0;
-margin-top: 1000px;
+    background-color: #333b58;
+    position: relative;
+    color: #fff;
+    z-index: 0;
 }
 
 .loan_box > .sky {
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
 }
 
 .loan_box > .sky > .blue {
-position: absolute;
-width: 100%;
-height: 100%;
-top: 0;
-left: 0;
-background-color: #559cde;
-transition: height .85s;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #559cde;
+    transition: height .85s;
 }
 
 .loan_box.active > .sky > .blue {
-height: 0;
+    height: 0;
 }
 
 .loan_box.active > .sky > .moon {
-height: 112px;
-width: 112px;
-position: absolute;
-top: 200px;
-left: calc(50% + 450px);
-overflow: hidden;
+    height: 112px;
+    width: 112px;
+    position: absolute;
+    top: 200px;
+    left: calc(50% + 450px);
+    overflow: hidden;
 }
 
 .loan_box.active > .sky > .moon > .base {
-width: 110px;
-height: 110px;
-background-color: #ffdc00;
-border-radius: 50%;
-transition: background-color .85s;
+    width: 110px;
+    height: 110px;
+    background-color: #ffdc00;
+    border-radius: 50%;
+    transition: background-color .85s;
 }
 
 .loan_box.active > .sky > .moon > .base {
-background-color: #fff;
+    background-color: #fff;
 }
 
 .loan_box > .sky > .moon > .shadow {
-width: 100%;
-height: 100%;
-background-color: #333b58;
-position: absolute;
-top: -100%;
-left: -100%;
-border-radius: 50%;
-transition: top .85s .2s, left .85s .2s;
+    width: 100%;
+    height: 100%;
+    background-color: #333b58;
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    border-radius: 50%;
+    transition: top .85s .2s, left .85s .2s;
 }
 
 .loan_box.active > .sky > .moon > .shadow {
-top: -23%;
-left: -23%; 
+    top: -23%;
+    left: -23%; 
 }
 /* 대출박스 끝 */
 /* 대출박스 - 별 시작 */
 .loan_box .sky .ico-star {
-position: absolute;
-width: 4px;
-height: 4px;
-border-radius: 50%;
-background-color: #fff;
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
 }
 
 .loan_box .sky .ico-star-1 {
-top: 30%;
-left: 10%;
+    top: 30%;
+    left: 10%;
 }
 
 .loan_box .sky .ico-star-2 {
-top: 10%;
-left: 20%;
+    top: 10%;
+    left: 20%;
 }
 
 .loan_box .sky .ico-star-3 {
-top: 25%;
-left: 15%;
+    top: 25%;
+    left: 15%;
 }
 
 .loan_box .sky .ico-star-4 {
-top: 40%;
-right: 15%;
+    top: 40%;
+    right: 15%;
 }
 
 .loan_box .sky .ico-star-5 {
-top: 43%;
-right: 30%;
+    top: 43%;
+    right: 30%;
 }
 
 .loan_box .sky .ico-star-6 {
-top: 73%;
-right: 27%;
+    top: 73%;
+    right: 27%;
 }
 
 .loan_box .sky .ico-star-7 {
-top: 65%;
-left: 22%;
+    top: 65%;
+    left: 22%;
 }
 
 @keyframes clittering {
@@ -680,166 +694,167 @@ transform: scale(0.5);
 }
 
 .ico-star-1 {
-animation: clittering 2s infinite;
+    animation: clittering 2s infinite;
 }
 
 .ico-star-2 {
-animation: clittering 3s infinite;
+    animation: clittering 3s infinite;
 }
 
 .ico-star-3 {
-animation: clittering 5s infinite;
+    animation: clittering 5s infinite;
 }
 
 .ico-star-4 {
-animation: clittering 2s infinite;
+    animation: clittering 2s infinite;
 }
 
 .ico-star-5 {
-animation: clittering 4s infinite;
+    animation: clittering 4s infinite;
 }
 
 .ico-star-6 {
-animation: clittering 1.8s infinite;
+    animation: clittering 1.8s infinite;
 }
 
 .ico-star-7 {
-animation: clittering 3.5s infinite;
+    animation: clittering 3.5s infinite;
 }
 /* 대출박스 - 별 끝 */
 /* 대출박스 - 텍스트 시작 */
 .loan_box .con .txt_box {
-z-index: 100;
-position: relative;
-text-align: center;
-padding-top: 160px;
+    z-index: 100;
+    position: relative;
+    text-align: center;
+    padding-top: 160px;
 }
 
 .loan_box .con .txt_box > h3 {
-font-size: 40px;
-line-height: 1.35;
-margin: 0;
+    font-size: 40px;
+    line-height: 1.35;
+    margin: 0;
 }
 
 .loan_box .con .txt_box > p {
-margin-top: 24px;
-line-height: 1.7;
-font-size: 15px;
-opacity: 60%;            
+    margin-top: 24px;
+    line-height: 1.7;
+    font-size: 15px;
+    opacity: 60%;            
 }
 
 .loan_box .con .menu_box {
-display: flex;
-margin-top: 25px;
+    display: flex;
+    margin-top: 25px;
 }
 
 .loan_box .img_box_1 > img {
-width: 429px;
-height: 563px;
-display: block;
-margin: 25px auto 0 auto;
+    width: 429px;
+    height: 563px;
+    display: block;
+    margin: 25px auto 0 auto;
 }
 
 .loan_box .menu_box .btn_box:not(first-child) {
-margin-left: 6px;
+    margin-left: 6px;
 }
 
 .loan_box .menu_box a {
-font-size: 16px;
-width: 166px;
-height: 52px;
-border-radius: 10px;
-display: flex;
-justify-content: center;
-align-items: center;
-line-height: 51px;
-background-color: rgba(255,255,255, 0.09);
+    font-size: 16px;
+    width: 166px;
+    height: 52px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 51px;
+    background-color: rgba(255,255,255, 0.09);
 }
 
 .loan_box .menu_box > div:hover > a {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .loan_box .con .btn_box a img {
-width: 6px;
-height: 9px;
-margin-left: 8px;
+    width: 6px;
+    height: 9px;
+    margin-left: 8px;
 }
 /* 대출박스 - 텍스트 끝 */
 
 /* 체크카드 시작 */
 .checkcard_box {
-padding-top: 150px;
+    padding-top: 150px;
+    height: 1062px;
 }
 
 .checkcard_box h3 {
-font-size: 40px;
-line-height: 1.35;
-text-align: center;
-}
+    font-size: 40px;
+    line-height: 1.35;
+    text-align: center;
+    }
 
 .checkcard_box p {
-font-size: 15px;
-margin-top: 24px;
-line-height: 1.7;
-color: #666;
-text-align: center;
+    font-size: 15px;
+    margin-top: 24px;
+    line-height: 1.7;
+    color: #666;
+    text-align: center;
 }
 
 .checkcard_box .btn_box {
-margin-top: 30px
+    margin-top: 30px;
 }
 
 .checkcard_box .btn_box a {
-align-items: center;
-width: 258px;
-height: 56px;
-line-height: 56px;
-border-radius: 10px;
-background-color: #f6f6f6;
-color: #666;
-font-size: 16px;
+    align-items: center;
+    width: 258px;
+    height: 56px;
+    line-height: 56px;
+    border-radius: 10px;
+    background-color: #f6f6f6;
+    color: #666;
+    font-size: 16px;
 }
 
 .checkcard_box .btn_box:hover > a {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 .checkcard_box .btn_box > a > img {
-width: 6px;
-height: 9px;
-display: block;
-margin-left: 8px;
-margin-top: 1px;
+    width: 6px;
+    height: 9px;
+    display: block;
+    margin-left: 8px;
+    margin-top: 1px;
 }
 
 /* 슬라이드 시작 */
 .checkcard_box .slider_box {
-position: relative;
-width: 660px;
-margin: 80px auto 0 auto;
+    position: relative;
+    width: 660px;
+    margin: 80px auto 0 auto;
 }
 
 .checkcard_box .slider_box .slick .item > .img-box {
-padding-top: 30px;
-padding-bottom: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
 .checkcard_box .slider_box .slick .item.slick-center {
-transform: scale(1.17);
+    transform: scale(1.17);
 }
 
 .checkcard_box .slider_box > .arrows > div {
-position: absolute;
-top: 50%;
-transform: translateY(-50%);
-cursor: pointer;
-right: calc(100% + 100px);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    right: calc(100% + 100px);
 }
 
 .checkcard_box .slider_box > .arrows > div:last-child {
-left: calc(100% + 100px);
-right: auto;
+    left: calc(100% + 100px);
+    right: auto;
 }
 /* 슬라이드 끝 */
 
@@ -853,7 +868,7 @@ transform: translateY(-45%);
 .itskill_box {
     padding-top: 160px;
     background-color: #f9f9f9;
-    padding-bottom: 230px;
+    padding-bottom: 120px;
 }
 
 .itskill_box > .con > h3 {
@@ -993,7 +1008,7 @@ footer .box_3 .license_2 span {
 }
 
 footer .box_3 > .menu_box_2 ul {
-    margin-right: 53px;
+    margin-right: 40px;
 }
 
 footer .box_3 > .menu_box_2 ul > li {
